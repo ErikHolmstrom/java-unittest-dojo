@@ -5,25 +5,42 @@ import dojo.model.produce.Bread
 import spock.lang.*
 
 class PointOfSaleTest extends Specification {
-    /**
-     * Lets start by making a test for the method: Purchase
-     *
-     */
 
 
-    def "Check that register"() {
-       given:
-        List<Money> money = [new Money(Money.Value.OneThousand)]
-        PointOfSale pointOfSale = new PointOfSale(money)
+    void setupSpec(){
+        //A function used to setup data that will be run ONCE before ALL the tests
+    }
 
-        def sc = new ShoppingCart()
-       sc.addProduce(new Bread())
-        pointOfSale.Purchase(sc)
-       when:
-       def result = pointOfSale.getRegister()
+    void setup() {
+        //A function used to setup data that will be run ONCE before EVERY test
+    }
 
-       then:
-        result.size() == 1
+    void cleanupSpec(){
+        //A function used to clean up data that will be run ONCE before ALL the tests
+    }
+
+    void cleanup(){
+        //A function used to clean up data that will be run ONCE before EVERY test
+    }
+
+    //An example of a test implementation
+    def "Check that the produce in the shopping cart is added to the register"() {
+       given: 'One thousand "money" in the pos'
+            List<Money> money = [new Money(Money.Value.OneThousand)]
+            PointOfSale pointOfSale = new PointOfSale(money)
+
+        and:'Attempting to purchase some bread'
+
+            def sc = new ShoppingCart()
+            sc.addProduce(new Bread())
+            pointOfSale.Purchase(sc)
+
+       when: 'Fetching the register from the pos'
+            def result = pointOfSale.getRegister()
+
+       then: 'The pos register should contain the bread'
+            result.size() == 1
+            result.get(0) instanceof Bread
 
     }
 }

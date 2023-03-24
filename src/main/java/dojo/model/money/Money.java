@@ -11,7 +11,7 @@ public class Money {
         return value.getValue();
     }
 
-    enum Value {
+    public enum Value {
         One(1),
         Two(2),
         Five(5),

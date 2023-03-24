@@ -18,20 +18,19 @@ public class UserInput {
     }
 
     public void shop(ShoppingCart shoppingCart) {
-        try{
+        try {
             String userInput;
             do {
                 userInput = getUserInput();
                 Produce parsedProduce = ProduceFactory.getProduceFromString(userInput);
                 shoppingCart.addProduce(parsedProduce);
-            } while(!userInput.isEmpty());        }
-        catch(IOException e){
+            } while(!userInput.isEmpty());
+        } catch(IOException e) {
             //DO nothing
         } catch(NumberFormatException nfe) {
             //Do nothing
         }
 
     }
-
 
 }
