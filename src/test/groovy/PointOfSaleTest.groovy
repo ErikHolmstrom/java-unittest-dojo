@@ -16,11 +16,11 @@ class PointOfSaleTest extends Specification {
     }
 
     void cleanupSpec(){
-        //A function used to clean up data that will be run ONCE before ALL the tests
+        //A function used to clean up data that will be run ONCE after ALL the tests
     }
 
     void cleanup(){
-        //A function used to clean up data that will be run ONCE before EVERY test
+        //A function used to clean up data that will be run ONCE after EVERY test
     }
 
     //An example of a test implementation

@@ -36,7 +36,9 @@ public class PointOfSale {
      */
     public BigDecimal getCurrentRegisterPrice() {
         BigDecimal result = new BigDecimal(0);
-        register.stream().forEach(p -> result.add(p.getCost()));
+        for(Produce produce : register){
+            result = result.add(produce.getCost());
+        }
         return result;
     }
 
@@ -47,7 +49,7 @@ public class PointOfSale {
      * @throws NotEnoughMoneyException if buyer cannot afford his/her purchase or the cashier does not have enough change
      */
     public List<Money> getChange(List<Money> payment) throws NotEnoughMoneyException{
-        int moneyBackAmount = getCurrentRegisterPrice().subtract(BigDecimal.valueOf(convertMoneyListToInt(payment))).intValue();
+        int moneyBackAmount = BigDecimal.valueOf(convertMoneyListToInt(payment)).subtract(getCurrentRegisterPrice()).intValue();
         if(moneyBackAmount < 0) {
             throw new NotEnoughMoneyException("Buyer does not have enough money");
         }
