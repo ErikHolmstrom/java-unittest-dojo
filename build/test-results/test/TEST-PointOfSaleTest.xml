@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="PointOfSaleTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-03-21T21:15:45" hostname="erik-ThinkPad-X1-Carbon-Gen-10" time="0.04">
+  <properties/>
+  <testcase name="Check that register" classname="PointOfSaleTest" time="0.04"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
