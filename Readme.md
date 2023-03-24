@@ -14,7 +14,7 @@ https://site.mockito.org/
 We will start by implementing the PointOfSaleTest test, the goal here is to learn some basics in with asserts
 and setting up tests.
 There is already a reference test you can look at.
-1. Start by testing the "getChange"
+1. Start by testing the "getChange" by asserting
 
 
 
@@ -23,4 +23,3 @@ In the second exercise we will implement the UserInput test. The goal here is to
 1. Test the shop method by mocking away the "getUserInput" method. A recommendation is to use the spy functionality.
 2. Afterwards try to mock away the "ProduceFactory.getProduceFromString" functionality, refactor the code as needed 
 to make it work
-3. 

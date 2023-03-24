@@ -1,6 +1,5 @@
 package dojo.model;
 
-import dojo.model.produce.Bread;
 import dojo.model.produce.Produce;
 import dojo.model.produce.ProduceFactory;
 
@@ -30,7 +29,6 @@ public class UserInput {
         } catch(NumberFormatException nfe) {
             //Do nothing
         }
-
     }
 
 }
